@@ -11,23 +11,36 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("You clicked Submit!");
             } else {
                 let gameType = this.getAttribute("data_type");
-                alert(`You clicked ${gameType}`); 
+                /*alert(`You clicked ${gameType}`); */
+                runGame(gameType);
             }
         })
     }
 })
+
+
+runGame("addition");
+
 
 /**
  * The main game "loop", called when the script is first loaded
  * after users answer has been processed 
  */
 
-function runGame() {
+function runGame(gameType) {
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
+
+    if(gameType === "addition") {
+        displayAdditionalQuestion(num1, num2);
+    } else {
+        alert(`Unknow game type: ${gameType}`);
+        throw `Unknown game type: ${gameType}. Aborting!`;
+    }
 }
 
-runGame()
+
+
 
 function checkAnswer() {
     
@@ -45,8 +58,10 @@ function incrementWrongAnswer() {
     
 }
 
-function displayAdditionalQuestion() {
-    
+function displayAdditionalQuestion(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "+";
 }
 
 function displaySustractQuestion() {
