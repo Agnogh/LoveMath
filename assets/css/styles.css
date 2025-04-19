@@ -111,9 +111,9 @@ body {
     transition: all 0.5s;
 }
 
-.btn--big::after{
-    content: attr(data-type);
-    font-size: 1rem;
+.btn--big::after{   /*double colons is for pseudo element (single is for pseudo selector)*/
+    content: attr(data_type);
+    font-size: 1rem; 
     color: #445361;
     position: relative;
     left: -0.5em;
@@ -125,7 +125,7 @@ body {
 }
 
 .btn--blue:active,
-.btn--blue:hover {
+.btn--blue:hover {  /* style when mouse is however over*/
     background-color: darkblue;
     color: white;
 }
