@@ -21,7 +21,7 @@ body {
 
 /* --------- Game layout */
 
-.game-area {
+.game_area {
     background-color: #E6ECF0;
     box-sizing: border-box;
     width: 85%;
@@ -33,24 +33,24 @@ body {
     padding: 1%;
 }
 
-.question-area {
+.question_area {
     width: 50%;
     font-size: 2rem;
     margin: auto;
     padding: 50px 0;
 }
 
-.question-area span {
+.question_area span {
     padding: 0 15px;
 }
 
-.score-area {
+.score_area {
     margin: 5px auto;
     width: 60%;
     font-size: 1.2rem;
 }
 
-.controls-area {
+.controls_area {
     width: 85%;
     margin: 30px auto;
 }
@@ -65,12 +65,12 @@ body {
     font-weight: bold;
 }
 
-.answer-message {
+.answer_message {
     display: none;
     font-size: 1rem;
 }
 
-#answer-box {
+#answer_box {
     border: none;
     color: #445361;
     display: inline-block;
@@ -109,6 +109,14 @@ body {
     font-size: 3.2rem;
     margin: 0 30px;
     transition: all 0.5s;
+}
+
+.btn--big::after{
+    content: attr(data-type);
+    font-size: 1rem;
+    color: #445361;
+    position: relative;
+    left: -0.5em;
 }
 
 .btn--blue {
