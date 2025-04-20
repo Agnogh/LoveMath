@@ -36,6 +36,8 @@ function runGame(gameType) {
         displayAdditionalQuestion(num1, num2);
     } else if (gameType === "multiply") {
         displayMultiplyQuestion(num1, num2);
+    } else if (gameType === "subtract") {
+        displaySustractQuestion(num1, num2);
     } else {
         alert(`Unknow game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting!`;
@@ -78,6 +80,8 @@ function calculateCorrectAnswer() {
         return [operand1 + operand2, "addition"];   /* calucaltes num1 and num2 and calles the fucntion "addition" that means "Keep playing addition game" */ 
     } else if (operator === "x") {
         return [operand1 * operand2, "multiply"];
+    } else if (operator === "-") {
+        return [operand1 - operand2, "subtract"];
     } else {
         alert(`Uniplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
@@ -108,8 +112,17 @@ function displayAdditionalQuestion(operand1, operand2) {
     document.getElementById("operator").textContent = "+";
 }
 
-function displaySustractQuestion() {
-    
+function displaySustractQuestion(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
+    /**
+     * this works same as IF statement
+     * condition that we are checking goes BEFORE question mark which means
+     * is operand 1 bigger than operand 2 and if so...
+     * return operand1
+     * if not (else part) return operand2
+     */
+    document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1;
+    document.getElementById("operator").textContent = "-";
 }
 
 function displayMultiplyQuestion(operand1, operand2) {
