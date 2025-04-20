@@ -41,11 +41,24 @@ function runGame(gameType) {
 }
 
 
+/***
+ * Checks the answer against first element in
+ * the return calculateCorrectAnswer array
+ */
 
+function checkAnswer() {   
+    let userAnswer = parseInt(document.getElementById("answer_box").value);
+    let calculatedAnswer = calculateCorrectAnswer();
+    let isCorrect = userAnswer=== calculatedAnswer[0];
 
-function checkAnswer() {
-    
+    if(isCorrect) {
+        alert("Hey! YOu go tit right");
+    } else {
+        alert(` Darn, your answer is ${userAnswer}. The correct answer is ${calculatedAnswer[0]}!`)
+    }
 }
+    
+
 
 /**
  * Gets the operands (the numbers) and the operator (plus, minus, etc)
