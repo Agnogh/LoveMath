@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
+document.getElementById("answer_box").addEventListener("keydown", function(event) {
+    /**
+     * listening for the "keydown event" (when the key is pressed)
+     * and if the key pressed in "Enter", then run function
+     */
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
+})
 
 runGame("addition");
 
