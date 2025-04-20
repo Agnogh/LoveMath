@@ -53,8 +53,10 @@ function checkAnswer() {
 
     if(isCorrect) {
         alert("Hey! YOu go tit right");
+        incrementScore();
     } else {
         alert(` Darn, your answer is ${userAnswer}. The correct answer is ${calculatedAnswer[0]}!`)
+        incrementWrongAnswer();
     }
 }
     
@@ -86,6 +88,10 @@ function incrementScore() {
     let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
 }
+
+/**
+ * Gets the current tally of incorrect answers from DOM and increments it by 1
+ */
 
 function incrementWrongAnswer() {
    let oldScore = parseInt(document.getElementById("incorrect").innerText); /* we are calling out different id  */
