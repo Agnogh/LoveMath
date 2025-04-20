@@ -29,6 +29,18 @@ runGame("addition");
  */
 
 function runGame(gameType) {
+/**
+ * This clears out the value in the answer box by making it appear blank
+ */
+    document.getElementById("answer_box").value = "";
+
+/**
+* This creates that cursor always shows up on the text box
+*/
+    document.getElementById("answer_box").focus();
+    /**
+     * Creates two random numbers between 1 and 25
+     */
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
 
