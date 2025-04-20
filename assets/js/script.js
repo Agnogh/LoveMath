@@ -78,13 +78,18 @@ function calculateCorrectAnswer() {
     }
     }
 
+    /**
+     * Gets the current score from the DOM and increments it by 1
+     */
 
 function incrementScore() {
-    
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
 }
 
 function incrementWrongAnswer() {
-    
+   let oldScore = parseInt(document.getElementById("incorrect").innerText); /* we are calling out different id  */
+   document.getElementById("incorrect").innerText = ++oldScore;
 }
 
 function displayAdditionalQuestion(operand1, operand2) {
